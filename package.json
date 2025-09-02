@@ -12,9 +12,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:ci": "vitest run --coverage",
-    "msw": "node ./src/mocks/browser.js",
+    "msw": "node ./src/mocks/browser.ts",
     "json:server": "json-server --watch api/db.json --port 4000",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
