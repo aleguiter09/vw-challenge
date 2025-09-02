@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Alpha",
+      "description": "First item",
+      "createdAt": "2024-01-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Beta",
+      "description": "Second item",
+      "createdAt": "2024-02-15T09:30:00Z"
+    },
+    {
+      "id": "0365",
+      "name": "Item",
+      "description": "Description",
+      "createdAt": "2025-09-02T10:36:05.239Z"
+    }
+  ]
+}
