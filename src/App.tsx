@@ -1,19 +1,16 @@
-import { useState } from "react";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./utils/queryClient";
+import { Table } from "./components/ui/Table";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <h1>Volkswagen Digital:Hub</h1>
       <h3>Frontend Challenge</h3>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <QueryClientProvider client={queryClient}>
+          <Table />
+        </QueryClientProvider>
       </div>
     </>
   );

@@ -1,6 +1,10 @@
 import { create } from "zustand";
+import type { Task } from "../../types/tasks";
 
-type Sort = { by: "name" | "createdAt"; order: "asc" | "desc" };
+type Sort = {
+  by: keyof Omit<Task, "id">;
+  order: "asc" | "desc";
+};
 
 type State = {
   search: string;
@@ -16,9 +20,9 @@ type Actions = {
   toggleCreate: (v?: boolean) => void;
 };
 
-export const useItems = create<State & Actions>((set) => ({
+export const useTasks = create<State & Actions>((set) => ({
   search: "",
-  sort: { by: "name", order: "asc" },
+  sort: { by: "title", order: "asc" },
   selectedId: undefined,
   isCreateOpen: false,
   setSearch: (v) => set({ search: v }),
