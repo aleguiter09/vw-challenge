@@ -1,18 +1,32 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
 import App from "../App";
 
+vi.mock("../components/ui/Table", () => {
+  return {
+    Table: () => <div>Mocked Table Component</div>,
+  };
+});
+
+vi.mock("@tanstack/react-query", async () => {
+  const actual = await vi.importActual("@tanstack/react-query");
+
+  return {
+    ...actual,
+    QueryClientProvider: ({ children }: { children: React.ReactNode }) => (
+      <div>{children}</div>
+    ),
+  };
+});
+
 describe("App", () => {
-  it("renders Vite + React heading", () => {
+  it("renders heading and Table", () => {
     render(<App />);
-    expect(screen.getByText(/Vite \+ React/i)).toBeInTheDocument();
+    expect(screen.getByText(/Volkswagen Digital:Hub/i)).toBeInTheDocument();
   });
 
-  it("increments count when button is clicked", () => {
+  it("renders mocked Table component", () => {
     render(<App />);
-    const button = screen.getByRole("button", { name: /count is/i });
-    expect(button).toHaveTextContent("count is 0");
-    fireEvent.click(button);
-    expect(button).toHaveTextContent("count is 1");
+    expect(screen.getByText(/Mocked Table Component/i)).toBeInTheDocument();
   });
 });
