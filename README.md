@@ -1,1 +1,3 @@
-# Alejandro Guiter - VW DIGITAL:Hub React Frontend Challenge
+# Alejandro Guiter
+
+## Volkswagen Digital:Hub React Frontend Challenge
