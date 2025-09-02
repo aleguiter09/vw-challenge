@@ -1,2 +1,1 @@
-# vw-frontend-challenge
-React frontend challenge for VW Digital:HUB
+# Alejandro Guiter - VW DIGITAL:Hub React Frontend Challenge
