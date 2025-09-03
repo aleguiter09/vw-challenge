@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, type Mock } from "vitest";
-import { Table } from "../../../components/ui/Table";
 import { useQuery } from "@tanstack/react-query";
+import { Table } from "@/components/ui/Table/Table";
 
 vi.mock("@tanstack/react-query", () => ({
   useQuery: vi.fn(),

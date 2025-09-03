@@ -1,12 +1,12 @@
 import { describe, it, vi } from "vitest";
 
-vi.mock("../App", () => ({
+vi.mock("@/App", () => ({
   __esModule: true,
   default: () => "Mocked App",
 }));
 
 describe("main.tsx", () => {
-  it("llama a createRoot y renderiza App en #root", async () => {
+  it("call createRoot and renders the App component in #root", async () => {
     const root = document.createElement("div");
     root.id = "root";
     document.body.appendChild(root);
@@ -17,7 +17,7 @@ describe("main.tsx", () => {
       })),
     }));
 
-    await import("../main.tsx");
+    await import("@/main.tsx");
 
     document.body.removeChild(root);
   });

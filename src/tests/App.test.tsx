@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import App from "../App";
+import App from "@/App";
 
-vi.mock("../components/ui/Table", () => {
+vi.mock("@/components/ui/Table", () => {
   return {
     Table: () => <div>Mocked Table Component</div>,
   };

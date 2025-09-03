@@ -1,9 +1,13 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [react()],
   test: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+    },
     environment: "jsdom",
     dir: "src/tests",
     globals: true,

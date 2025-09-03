@@ -13,7 +13,8 @@
     "test": "vitest",
     "test:ci": "vitest run --coverage",
     "json:server": "json-server --watch api/db.json --port 4000",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dev:all": "concurrently \"npm run json:server\" \"npm run dev\""
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -46,6 +47,7 @@
     "@typescript-eslint/parser": "^8.41.0",
     "@vitejs/plugin-react-swc": "^4.0.0",
     "@vitest/coverage-v8": "^3.2.4",
+    "concurrently": "^9.2.1",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
@@ -58,6 +60,7 @@
     "json-server": "^1.0.0-beta.3",
     "lint-staged": "^16.1.6",
     "prettier": "^3.6.2",
+    "sass": "^1.92.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.4",
